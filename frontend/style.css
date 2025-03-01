@@ -1,0 +1,37 @@
+.content
+{
+    width: 80%;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+}
+
+.logo
+{
+    width: 300px;
+    margin: auto;
+}
+
+.container
+{
+    width: 100%;
+}
+
+button
+{
+    width: 150px;
+    padding: 10px;
+    background-color: #dae0ff;
+    border: solid 3px #5271ff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.result_box
+{
+    border: solid 3px #5271ff;
+    padding: 20px;
+    width: fit-content;
+    margin: auto;
+}

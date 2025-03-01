@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <title>AutoIPA</title>
+    </head>
+    <body>
+        <div class="content">
+            <div class="container">
+                <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="" class="logo">
+            </div>
+            <p>AutoIPA is a tool that makes automatic AI-powered phonetic transcription available, quick and easy.</p>
+            <p>To begin, tap the "Start Recording" button:</p>
+            <button id="start">Start Recording</button>
+            <button id="stop" disabled>Stop Recording</button>
+            <p>Or upload a file:</p>
+            <p>To be implemented</p>
+
+            <div class="result_box">
+                <h2>Transcription</h2>
+                <p id="output"></p>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>
