@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='./assets/loading.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato&display=swap" rel="stylesheet">
+        <title>AutoIPA - About</title>
+    </head>
+    <body>
+        <div class="content">
+            <h1>
+                Auto<span style="font-style: italic; color: #859bff; font-weight: 700;">ipa</span>
+            </h1>
+            <p>AutoIPA is a tool that makes automatic AI-powered phonetic transcription available, quick and easy.</p>
+            <a href="./">Back to the Main page</a>
+
+            <div class="card">
+                <h2 class="card_title">About AutoIPA</h2>
+                <hr>
+                <p>AutoIPA is an AI-powered phonetic transcription tool that uses a pre-trained model to convert your recording to International Phonetic Alphabet (IPA) output.</p>
+                <p>The tool currently uses the <span class="code_snippet">facebook/wav2vec2-xlsr-53-espeak-cv-ft</span> model, which you can check out at <a style="color: white;" href="https://huggingface.co/facebook/wav2vec2-xlsr-53-espeak-cv-ft">Hugging Face</a>.</p>
+                <p>Results may not be accurate and precision varies with language. The model does not separate words automatically, so it is recommended to use single words or short phrases. For better results, speak slowly and clearly.</p>
+                <p>AutoIPA is a project created and maintained by <a style="color: white;" href="http://www.brizzigui.com">Guilherme Brizzi</a>.</p>
+                <p>Privacy notice: AutoIPA stores your recording and its transcription to help with further development. No personal identification is collected. By using this service, you agree to such terms.</p>
+            </div>
+
+            <br>
+            
+            <div class="footer">
+                <p style="margin: 5px;">Made by <a href="http://brizzigui.com">Guilherme Brizzi</a> with <3</p>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>
