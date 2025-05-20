@@ -28,12 +28,17 @@
             <br>
 
             <div id="input" class="main_area">
-                <p style="top: 0px;">To begin, tap the button and start recording:</p>
+                <p style="margin-top: 35px;">To begin, tap the button and start recording:</p>
                 <button id="toggle" onclick="toggle();" class="button record">
                     <img src="{{ url_for('static', filename='assets/recording.svg') }}" alt="" class="button_img" id="button_img">
                 </button>
                 <div class="button_background" id="button_background">
 
+                </div>
+                <div class="upload_box">
+                    <input type="file" class="file_upload" accept=".wav" id="upload_field" onchange="upload_file();"/>
+                    <p style="margin-bottom: 5px;">Or upload a file</p>
+                    <img src="{{ url_for('static', filename='assets/upload.svg') }}" alt="" style="width: 36px;">
                 </div>
             </div>
 
@@ -43,13 +48,11 @@
             </div>
 
             <div class="results main_area" id="result_box">
-                <div class="result_box">
-                    <p>Transcription</p>
-                    <h3 id="output"></h3>
+                <div class="result_box" id="output">
                 </div>
-                <button onclick="location.reload()" class="button common">Record again</button>
-                <button onclick="copy_to_clipboard()" class="button common" id="clipboard_button">Copy to clipboard</button>
-
+                <div class="button_container">
+                    <button onclick="location.reload()" class="button common">Record again</button>
+                </div>
             </div>
 
             <div class="footer">
