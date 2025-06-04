@@ -1,0 +1,4 @@
+Average char error rate for xlsr_53: 0.1404843501173027
+Average char error rate for lv_60: 0.13136020712642302
+sd xlsr_53 1.783025159221294e-09 
+sd lv_60 0.04756074052558385
