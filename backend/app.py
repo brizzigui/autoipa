@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify, render_template
 from werkzeug import exceptions 
 import os
+from transcribe.run import Runner
 from process_audio import process_raw_audio, process_file_audio
 import uuid, time
 
 app = Flask(__name__, static_folder='../frontend', template_folder='../frontend')
+runner = Runner()
 
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -32,7 +34,7 @@ def upload_file():
         filepath = os.path.join("outputs", f"{filename}.wav")
         file.save(filepath)
         
-        result = process_file_audio(filename)
+        result = process_file_audio(runner, filename)
         return jsonify(result)
     
     except exceptions.RequestEntityTooLarge:
@@ -54,7 +56,7 @@ def upload_voice():
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], f"{filename}.webm")
         file.save(filepath)
         
-        result = process_raw_audio(filename)
+        result = process_raw_audio(runner, filename)
         return jsonify(result)
     
     except exceptions.RequestEntityTooLarge:
